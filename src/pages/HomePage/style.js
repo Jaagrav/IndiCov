@@ -1,5 +1,9 @@
 export default function styles(theme) {
     return {
+        homePage: {
+            margin: "auto",
+            verticalAlign: "middle"
+        },
         mapSvg: {
             height: 650,
             width: "100%",
@@ -23,7 +27,8 @@ export default function styles(theme) {
             backgroundColor: theme.palette.background.containerColor
         },
         cardType: {
-            color: theme.palette.text.secondary
+            color: theme.palette.text.secondary,
+            fontWeight: 500
         },
         cardConfirmedFigures: {
             color: theme.palette.highlight.blue,

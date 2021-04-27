@@ -20,7 +20,7 @@ function Content() {
     <div className={classes.app}>
       <Router>
         <SideBar />
-        <Container maxWidth="lg">
+        <Container maxWidth="lg" className={classes.appContainer}>
           <Routes />
         </Container>
       </Router>

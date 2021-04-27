@@ -6,11 +6,23 @@ import { makeStyles } from '@material-ui/core/styles';
 import styles from './style';
 import paths from './paths';
 
+import axios from 'axios';
+
 const useStyles = makeStyles(styles);
 
 function HomePage() {
     console.log(paths());
     const classes = useStyles();
+    const [covidData, setCovidData] = useState({
+        statewise: [
+            {
+                confirmed: 1,
+                recovered: 1,
+                active: 1,
+                deaths: 1,
+            }
+        ]
+    });
     const [mapArray, setMapArray] = useState(paths());
 
     const showMapData = (index, stateName) => {
@@ -22,10 +34,24 @@ function HomePage() {
     };
 
     useEffect(() => {
-    }, [mapArray]);
+        var config = {
+            method: 'get',
+            url: 'https://api.covid19india.org/data.json',
+            headers: {}
+        };
+
+        axios(config)
+            .then(function (response) {
+                setCovidData(response.data);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+
+    }, []);
 
     return (
-        <Grid container>
+        <Grid container className={classes.homePage}>
             <Grid item xs={12} sm={6}>
                 <Grid container className={classes.map}>
                     <svg
@@ -51,7 +77,7 @@ function HomePage() {
                             <Card className={classes.card}>
                                 <CardContent>
                                     <Typography className={classes.cardType} variant="caption">Confirmed</Typography>
-                                    <Typography className={classes.cardConfirmedFigures} variant="h6">17,810,880</Typography>
+                                    <Typography className={classes.cardConfirmedFigures} variant="h6">{covidData.statewise[0].confirmed.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</Typography>
                                 </CardContent>
                             </Card>
                         </Grid>
@@ -59,7 +85,7 @@ function HomePage() {
                             <Card className={classes.card}>
                                 <CardContent>
                                     <Typography className={classes.cardType} variant="caption">Recovered</Typography>
-                                    <Typography className={classes.cardRecoveredFigures} variant="h6">14,656,188</Typography>
+                                    <Typography className={classes.cardRecoveredFigures} variant="h6">{covidData.statewise[0].recovered.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</Typography>
                                 </CardContent>
                             </Card>
                         </Grid>
@@ -67,7 +93,7 @@ function HomePage() {
                             <Card className={classes.card}>
                                 <CardContent>
                                     <Typography className={classes.cardType} variant="caption">Active</Typography>
-                                    <Typography className={classes.cardActiveFigures} variant="h6">2,948,008</Typography>
+                                    <Typography className={classes.cardActiveFigures} variant="h6">{covidData.statewise[0].active.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</Typography>
                                 </CardContent>
                             </Card>
                         </Grid>
@@ -75,11 +101,10 @@ function HomePage() {
                             <Card className={classes.card}>
                                 <CardContent>
                                     <Typography className={classes.cardType} variant="caption">Deaths</Typography>
-                                    <Typography className={classes.cardDeathsFigures} variant="h6">199,069</Typography>
+                                    <Typography className={classes.cardDeathsFigures} variant="h6">{covidData.statewise[0].deaths.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</Typography>
                                 </CardContent>
                             </Card>
                         </Grid>
-
                     </Grid>
                 </Grid>
             </Grid>

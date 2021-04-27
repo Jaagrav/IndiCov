@@ -16,8 +16,18 @@ export default function styles(theme) {
         },
     },
     app: {
+      position: "absolute",
+      top: 0,
+      left: 0,
+      margin: "auto",
+      height: "100%",
+      width: "100%",
       display: "grid",
       gridTemplateColumns: "auto 1fr"
+    },
+    appContainer: {
+      display: "flex",
+      justifyContent: "center"
     }
   }
 }
