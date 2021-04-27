@@ -8,6 +8,8 @@ import paths from './paths';
 
 import axios from 'axios';
 
+import { CovidGridData, Map } from "../../components";
+
 const useStyles = makeStyles(styles);
 
 function HomePage() {
@@ -88,60 +90,8 @@ function HomePage() {
     return (
         <Grid container className={classes.homePage}>
             <Grid item xs={12} sm={6}>
-                <Grid container className={classes.map}>
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        version="1.1"
-                        className={classes.mapSvg}
-                        viewBox="0 70 650 740"
-                    >
-                        <g>
-                            {mapArray.map((path, index) => <path
-                                d={path.d}
-                                title={path.title}
-                                className={path.selected ? `${classes.land} ${classes.landSelected}` : classes.land}
-                                onClick={(e) => showMapData(index, path.title)}
-                            />)}
-                        </g>
-                    </svg>
-                </Grid>
-                <Grid container>
-                    <Typography gutterBottom variant="h5">Cases in <Typography variant="h5" className={classes.blueText}>{covidGridData.stateName}</Typography></Typography>
-                    <Grid container spacing={2}>
-                        <Grid item xs={6} sm={3}>
-                            <Card className={classes.card}>
-                                <CardContent>
-                                    <Typography className={classes.cardType} variant="caption">Confirmed</Typography>
-                                    <Typography className={classes.cardConfirmedFigures} variant="h6">{covidGridData.confirmed}</Typography>
-                                </CardContent>
-                            </Card>
-                        </Grid>
-                        <Grid item xs={6} sm={3}>
-                            <Card className={classes.card}>
-                                <CardContent>
-                                    <Typography className={classes.cardType} variant="caption">Recovered</Typography>
-                                    <Typography className={classes.cardRecoveredFigures} variant="h6">{covidGridData.recovered}</Typography>
-                                </CardContent>
-                            </Card>
-                        </Grid>
-                        <Grid item xs={6} sm={3}>
-                            <Card className={classes.card}>
-                                <CardContent>
-                                    <Typography className={classes.cardType} variant="caption">Active</Typography>
-                                    <Typography className={classes.cardActiveFigures} variant="h6">{covidGridData.active}</Typography>
-                                </CardContent>
-                            </Card>
-                        </Grid>
-                        <Grid item xs={6} sm={3}>
-                            <Card className={classes.card}>
-                                <CardContent>
-                                    <Typography className={classes.cardType} variant="caption">Deaths</Typography>
-                                    <Typography className={classes.cardDeathsFigures} variant="h6">{covidGridData.deaths}</Typography>
-                                </CardContent>
-                            </Card>
-                        </Grid>
-                    </Grid>
-                </Grid>
+                <Map mapArray={mapArray} showMapData={showMapData} />
+                <CovidGridData covidGridData={covidGridData} />
             </Grid>
             <Grid item>
 
