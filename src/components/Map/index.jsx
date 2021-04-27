@@ -16,13 +16,14 @@ function Map({ mapArray, showMapData }) {
                 version="1.1"
                 className={classes.mapSvg}
                 viewBox="0 70 650 740"
+                onClick={e => { showMapData(e, null, "TT"); }}
             >
                 <g>
                     {mapArray.map((path, index) => <path
                         d={path.d}
                         title={path.title}
                         className={path.selected ? `${classes.land} ${classes.landSelected}` : classes.land}
-                        onClick={(e) => showMapData(index, path.title)}
+                        onClick={(e) => showMapData(e, index, path.title)}
                     />)}
                 </g>
             </svg>

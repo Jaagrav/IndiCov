@@ -33,11 +33,13 @@ function HomePage() {
     });
     const [mapArray, setMapArray] = useState(paths());
 
-    const showMapData = (index, stateName) => {
+    const showMapData = (e, index, stateName) => {
+        e.stopPropagation();
         const tempMapArray = mapArray;
         for (let i in tempMapArray)
             tempMapArray[i].selected = false;
-        tempMapArray[index].selected = true;
+        if (index)
+            tempMapArray[index].selected = true;
         setMapArray([...tempMapArray]);
     };
 
@@ -74,16 +76,25 @@ function HomePage() {
 
         }
 
-        for (let i in covidData.statewise) {
-            if (covidData.statewise[i].state === countrySelected)
-                setCovidGridData({
-                    stateName: countrySelected,
-                    confirmed: covidData.statewise[i].confirmed.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","),
-                    recovered: covidData.statewise[i].recovered.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","),
-                    active: covidData.statewise[i].active.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","),
-                    deaths: covidData.statewise[i].deaths.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","),
-                });
-        }
+        if (countrySelected)
+            for (let i in covidData.statewise) {
+                if (covidData.statewise[i].state === countrySelected)
+                    setCovidGridData({
+                        stateName: countrySelected,
+                        confirmed: covidData.statewise[i].confirmed.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+                        recovered: covidData.statewise[i].recovered.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+                        active: covidData.statewise[i].active.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+                        deaths: covidData.statewise[i].deaths.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+                    });
+            }
+        else
+            setCovidGridData({
+                stateName: "India",
+                confirmed: covidData.statewise[0].confirmed.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+                recovered: covidData.statewise[0].recovered.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+                active: covidData.statewise[0].active.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+                deaths: covidData.statewise[0].deaths.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+            });
 
     }, [mapArray]);
 
