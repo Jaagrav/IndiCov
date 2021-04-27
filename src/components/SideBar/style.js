@@ -9,7 +9,7 @@ export default function styles(theme) {
             color: theme.palette.highlight.blue
         },
         drawerPaper: {
-            position: "fixed",
+            position: "relative",
             width: 100,
             backgroundColor: "transparent",
             border: "none",

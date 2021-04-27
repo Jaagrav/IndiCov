@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 import { Drawer, Tabs, Tab, Icon, Typography, Button } from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
@@ -20,6 +21,7 @@ function a11yProps(index) {
 
 function SideBar() {
     const classes = useStyles();
+    const history = useHistory();
     const [value, setValue] = React.useState(0);
 
     const handleChange = (event, newValue) => {
@@ -46,7 +48,15 @@ function SideBar() {
                 TabIndicatorProps={{ className: classes.tabIndicator }}
             >
                 {routesData.map((data, index) => {
-                    if (data.showOnHeader) return <Tab className={classes.tab} icon={data.icon} aria-label={data.pageName} {...a11yProps(index)} />;
+                    if (data.showOnHeader)
+                        return <Tab
+                            key={`link-index-${index}`}
+                            onClick={() => history.push(data.pageURL)}
+                            className={classes.tab}
+                            icon={data.icon}
+                            aria-label={data.pageName}
+                            {...a11yProps(index)}
+                        />;
                     else return null;
                 })}
             </Tabs>

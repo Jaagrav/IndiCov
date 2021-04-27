@@ -18,12 +18,12 @@ function Content() {
 
   return (
     <div className={classes.app}>
-      <SideBar />
-      <Container maxWidth="lg" className={classes.app}>
-        <Router>
+      <Router>
+        <SideBar />
+        <Container maxWidth="lg">
           <Routes />
-        </Router>
-      </Container>
+        </Container>
+      </Router>
     </div>
   );
 }
