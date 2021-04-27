@@ -4,6 +4,10 @@ export default function styles(theme) {
             margin: "auto",
             verticalAlign: "middle"
         },
+        blueText: {
+            display: "inline-block",
+            color: theme.palette.highlight.blue
+        },
         mapSvg: {
             height: 650,
             width: "100%",
