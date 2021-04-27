@@ -22,6 +22,7 @@ const theme = {
     background: {
       main: "#00101F",
       secondary: "#051C31",
+      containerColor: "#091A2C",
       gradient: "linear-gradient(180deg, #001A32 0%, #000C16 100%)"
     },
     contrastThreshold: 3,
