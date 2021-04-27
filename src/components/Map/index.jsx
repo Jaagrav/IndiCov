@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Grid, Typography, Card, CardContent } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
@@ -8,6 +8,13 @@ import styles from './style';
 const useStyles = makeStyles(styles);
 function Map({ mapArray, showMapData }) {
     const classes = useStyles();
+    const [covidGridData, setCovidGridData] = useState({
+        stateName: null,
+        confirmed: null,
+        recovered: null,
+        active: null,
+        deaths: null,
+    });
 
     return (
         <Grid container className={classes.map}>
@@ -20,6 +27,7 @@ function Map({ mapArray, showMapData }) {
             >
                 <g>
                     {mapArray.map((path, index) => <path
+                        key={path.d}
                         d={path.d}
                         title={path.title}
                         className={path.selected ? `${classes.land} ${classes.landSelected}` : classes.land}

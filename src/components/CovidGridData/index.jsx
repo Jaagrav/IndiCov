@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { Grid, Typography, Card, CardContent } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
@@ -6,8 +6,55 @@ import { makeStyles } from '@material-ui/core/styles';
 import styles from './style';
 
 const useStyles = makeStyles(styles);
-function CovidGridData({ covidGridData }) {
+function CovidGridData({ mapArray, covidData }) {
     const classes = useStyles();
+
+    const [covidGridData, setCovidGridData] = useState({
+        stateName: null,
+        confirmed: null,
+        recovered: null,
+        active: null,
+        deaths: null,
+    });
+
+    useEffect(() => {
+        setCovidGridData({
+            stateName: "India",
+            confirmed: covidData.statewise[0].confirmed.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+            recovered: covidData.statewise[0].recovered.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+            active: covidData.statewise[0].active.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+            deaths: covidData.statewise[0].deaths.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+        });
+    }, [covidData]);
+    useEffect(() => {
+        let countrySelected = "";
+        for (let i in mapArray) {
+            if (mapArray[i].selected)
+                countrySelected = mapArray[i].title;
+
+        }
+
+        if (countrySelected)
+            for (let i in covidData.statewise) {
+                if (covidData.statewise[i].state === countrySelected)
+                    setCovidGridData({
+                        stateName: countrySelected,
+                        confirmed: covidData.statewise[i].confirmed.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+                        recovered: covidData.statewise[i].recovered.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+                        active: covidData.statewise[i].active.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+                        deaths: covidData.statewise[i].deaths.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+                    });
+            }
+        else
+            setCovidGridData({
+                stateName: "India",
+                confirmed: covidData.statewise[0].confirmed.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+                recovered: covidData.statewise[0].recovered.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+                active: covidData.statewise[0].active.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+                deaths: covidData.statewise[0].deaths.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+            });
+
+    }, [mapArray]);
 
     return (
         <Grid container>
