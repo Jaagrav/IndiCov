@@ -7,14 +7,14 @@ import styles from './style';
 
 const useStyles = makeStyles(styles);
 
-function HomePage() {
+function AboutPage() {
     const classes = useStyles();
 
     return (
         <div>
-            This is the HomePage
+            This is the Aboutpage
         </div>
     );
 }
 
-export default HomePage;
+export default AboutPage;
