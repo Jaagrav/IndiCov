@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Container } from '@material-ui/core';
+import { Container, CssBaseline } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 import { SideBar } from './components';
@@ -12,8 +12,9 @@ import styles from "./style";
 
 import { theme, createMuiTheme, ThemeProvider } from "./theme";
 
+const useStyles = makeStyles(styles);
 function Content() {
-  const classes = makeStyles(styles);
+  const classes = useStyles();
 
   return (
     <div className={classes.app}>
@@ -30,6 +31,7 @@ function Content() {
 function App() {
   return (
     <ThemeProvider theme={createMuiTheme(theme)}>
+      <CssBaseline />
       <Content />
     </ThemeProvider>
   );

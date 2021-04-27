@@ -3,28 +3,26 @@ import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 const theme = {
   palette: {
     primary: {
-      main: "#FFFFFF",
-      blurColor: "rgba(84, 152, 255, 0.56)",
+      main: "#E7EFFF",
       gradient1: "#61FFB3",
       gradient2: "#7C99FF",
       mainGradient: "linear-gradient(to left, #61FFB3 0%, #7C99FF 70%)",
     },
-    secondary: {
-      main: "#ccd6f6",
-      darkGrey: "#3D476B",
+    highlight: {
+      blue: "#3B7BF6",
+      green: "#34BE42",
+      yellow: "#C9CC1F",
+      red: "#CC1F5E",
     },
     text: {
-      primary: "#FFFFFF",
-      secondary: "#111",
-      tertiary: "#140F20",
-      gradientText: {
-        background: "linear-gradient(to left, #61FFB3 0%, #7C99FF 100%)",
-        "-webkit-background-clip": "text",
-        "-webkit-text-fill-color": "transparent",
-      },
+      primary: "#E7EFFF",
+      secondary: "#556D9B",
+      disabled: "#616672",
     },
     background: {
-      main: "#141824"
+      main: "#00101F",
+      secondary: "#051C31",
+      gradient: "linear-gradient(180deg, #001A32 0%, #000C16 100%)"
     },
     contrastThreshold: 3,
     tonalOffset: 0.2,
