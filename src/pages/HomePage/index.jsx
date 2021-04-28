@@ -15,7 +15,9 @@ const useStyles = makeStyles(styles);
 function HomePage() {
     const classes = useStyles();
     const [covidData, setCovidData] = useState(null);
+    const [covidDailyData, setCovidDailyData] = useState(null);
     const [mapArray, setMapArray] = useState(paths());
+    const [index, setIndex] = useState(0);
 
     const showMapData = (e, index, stateName) => {
         if (e)
@@ -25,20 +27,36 @@ function HomePage() {
             tempMapArray[i].selected = false;
         if (index)
             tempMapArray[index].selected = true;
+        setIndex(index);
         setMapArray([...tempMapArray]);
     };
 
     useEffect(() => {
-        var config = {
+        var configIndiaData = {
             method: 'get',
             url: 'https://api.covid19india.org/data.json',
             headers: {}
         };
 
-        axios(config)
+        axios(configIndiaData)
             .then(function (response) {
                 console.log(response.data);
                 setCovidData(response.data);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+
+        var configTimeData = {
+            method: 'get',
+            url: 'https://api.covid19india.org/v4/min/timeseries.min.json',
+            headers: {}
+        };
+
+        axios(configTimeData)
+            .then(function (response) {
+                console.log(response.data);
+                setCovidDailyData(response.data);
             })
             .catch(function (error) {
                 console.log(error);
@@ -54,7 +72,7 @@ function HomePage() {
             </Grid>
             <Grid item xs={12} sm={6} className={classes.section}>
                 {covidData && <SearchBar mapArray={mapArray} showMapData={showMapData} />}
-                {covidData && <Charts />}
+                {covidDailyData && <Charts covidData={covidDailyData} mapArray={mapArray} index={index} />}
             </Grid>
         </Grid>
     );

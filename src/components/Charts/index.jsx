@@ -10,32 +10,7 @@ import { MdLocalHospital } from "react-icons/md";
 import { GiTombstone } from "react-icons/gi";
 
 import styles from './style';
-
-function TabPanel(props) {
-    const { children, value, index, ...other } = props;
-
-    return (
-        <div
-            role="tabpanel"
-            hidden={value !== index}
-            id={`vertical-tabpanel-${index}`}
-            aria-labelledby={`vertical-tab-${index}`}
-            {...other}
-        >
-            {value === index && (
-                <Box p={3}>
-                    <Typography>{children}</Typography>
-                </Box>
-            )}
-        </div>
-    );
-}
-
-TabPanel.propTypes = {
-    children: PropTypes.node,
-    index: PropTypes.any.isRequired,
-    value: PropTypes.any.isRequired,
-};
+import { Graph } from '../';
 
 function a11yProps(index) {
     return {
@@ -46,7 +21,7 @@ function a11yProps(index) {
 
 const useStyles = makeStyles(styles);
 
-export default function Charts() {
+export default function Charts({ covidData, mapArray, index }) {
     const classes = useStyles();
     const [value, setValue] = React.useState(0);
 
@@ -70,18 +45,16 @@ export default function Charts() {
                 <Tab className={classes.tab} data-type="active" icon={<MdLocalHospital />} {...a11yProps(2)} />
                 <Tab className={classes.tab} data-type="deaths" icon={<GiTombstone />} {...a11yProps(3)} />
             </Tabs>
-            <TabPanel value={value} index={0}>
-                Confirmed
-            </TabPanel>
-            <TabPanel value={value} index={1}>
-                Recovered
-            </TabPanel>
-            <TabPanel value={value} index={2}>
-                Active
-            </TabPanel>
-            <TabPanel value={value} index={3}>
-                Deaths
-            </TabPanel>
+            <Box className={classes.chart}>
+                <Typography variant="h5" className={classes.stateName}>{mapArray[index]?.title ? mapArray[index].title : 'India'}</Typography>
+                <Typography variant="subtitle1" className={classes.typeName}>
+                    {value === 0 ? <span className={classes.confirmedColor}>Confirmed</span> : null}
+                    {value === 1 ? <span className={classes.recoveredColor}>Recovered</span> : null}
+                    {value === 2 ? <span className={classes.testedColor}>Tested</span> : null}
+                    {value === 3 ? <span className={classes.deathsColor}>Deaths</span> : null}
+                </Typography>
+                <Graph covidData={covidData} mapArray={mapArray} value={value} index={index} />
+            </Box>
         </div>
     );
 }

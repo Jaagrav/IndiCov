@@ -26,7 +26,6 @@ function SearchBar({ mapArray, showMapData }) {
 
 
     useEffect(() => {
-        console.log(mapArray);
         setStates([]);
         for (let i in mapArray)
             setStates(prevStates => [...prevStates, mapArray[i]]);

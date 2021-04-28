@@ -4,7 +4,16 @@ export default function styles(theme) {
             flexGrow: 1,
             display: 'flex',
             margin: "34px 0",
-
+            maxHeight: 400,
+        },
+        chart: {
+            width: "100%",
+            maxHeight: 300,
+            padding: "0 24px",
+            "& canvas": {
+                maxWidth: "100%",
+                maxHeight: "85%",
+            }
         },
         tabIndicator: {
             width: "100%",
@@ -25,7 +34,7 @@ export default function styles(theme) {
             fontSize: "1.54rem",
             borderRadius: 0,
             color: theme.palette.text.secondary,
-            margin: "6px 0",
+            margin: "10px 0",
             "&.Mui-selected": {
               color: theme.palette.highlight.blue,
               "&[data-type='confirmed']": {
@@ -53,6 +62,26 @@ export default function styles(theme) {
         },
         cardDeathsFigures: {
             backgroundColor: `${theme.palette.highlight.red}4a`,
+        },
+        confirmedColor: {
+            color: theme.palette.highlight.blue, 
+        },
+        recoveredColor: {
+            color: theme.palette.highlight.green, 
+        },
+        testedColor: {
+            color: theme.palette.highlight.yellow,              
+        },  
+        deathsColor: {
+            color: theme.palette.highlight.red,
+        },
+        stateName: {
+            textAlign: 'right'
+            // position: 'absolute',
+        },
+        typeName: {
+            textAlign: 'right'
+            // position: 'absolute',
         }
     }
 }
