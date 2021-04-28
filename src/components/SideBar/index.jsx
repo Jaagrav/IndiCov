@@ -33,6 +33,7 @@ function SideBar() {
         <Drawer
             variant="permanent"
             classes={{
+                root: classes.drawerRoot,
                 paper: classes.drawerPaper
             }}
         >

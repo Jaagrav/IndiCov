@@ -8,8 +8,11 @@ export default function styles(theme) {
             display: "inline-block",
             color: theme.palette.highlight.blue
         },
+        drawerRoot: {
+            position: 'fixed',
+        },
         drawerPaper: {
-            position: "relative",
+            position: "relative", 
             width: 100,
             backgroundColor: "transparent",
             border: "none",

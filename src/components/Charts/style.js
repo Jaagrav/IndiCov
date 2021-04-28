@@ -1,19 +1,24 @@
 export default function styles(theme) {
     return {
         root: {
-            flexGrow: 1,
-            display: 'flex',
+            display: "grid",
+            gridTemplateColumns: "80px 1fr",
+
             margin: "34px 0",
+            [theme.breakpoints.down('md')]: {
+                gridTemplateColumns: "1fr",
+                gridGap: 16,
+                gridTemplateRows: "1fr 85px",
+            },
+            
             maxHeight: 400,
         },
         chart: {
             width: "100%",
-            maxHeight: 300,
-            padding: "0 24px",
             "& canvas": {
                 maxWidth: "100%",
-                maxHeight: "85%",
-            }
+                maxHeight: "75%",
+            },
         },
         tabIndicator: {
             width: "100%",
@@ -22,13 +27,14 @@ export default function styles(theme) {
             right: 'unset',
             left: 0,
             zIndex: -9,
+            borderRadius: 8,
         },
         tabs: {
-            width: 80
+            width: "100%",
         },
         tab: {
+            height: "100%",
             padding: "20px 0",
-            width: "100%",
             minWidth: "unset",
             maxWidth: "unset",
             fontSize: "1.54rem",
@@ -50,6 +56,9 @@ export default function styles(theme) {
                   color: theme.palette.highlight.red,
               }
             },
+            [theme.breakpoints.down('md')]: {
+                width: "25%",
+            }
         },  
         cardConfirmedFigures: {
             backgroundColor: `${theme.palette.highlight.blue}4a`,

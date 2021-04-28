@@ -12,7 +12,7 @@ export default function styles(theme) {
         height: "100%",
         margin: 0,
         backgroundRepeat: "no-repeat",
-        backgroundAttachment: "fixed"
+        backgroundAttachment: "fixed",
       },
     },
     app: {
@@ -22,12 +22,14 @@ export default function styles(theme) {
       margin: "auto",
       height: "100%",
       width: "100%",
-      display: "grid",
-      gridTemplateColumns: "auto 1fr"
     },
     appContainer: {
       display: "flex",
-      justifyContent: "center"
+      justifyContent: "center",
+      padding: "0 100px",
+      [theme.breakpoints.down('md')]: {
+        padding: 0,
+      },
     }
   }
 }

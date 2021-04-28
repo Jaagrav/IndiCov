@@ -10,6 +10,7 @@ import Routes from "./routes";
 
 import styles from "./style";
 
+import { Hidden } from "@material-ui/core";
 import { theme, createMuiTheme, ThemeProvider } from "./theme";
 
 const useStyles = makeStyles(styles);
@@ -19,7 +20,9 @@ function Content() {
   return (
     <div className={classes.app}>
       <Router>
-        <SideBar />
+        <Hidden mdDown>
+          <SideBar />
+        </Hidden>
         <Container maxWidth="lg" className={classes.appContainer}>
           <Routes />
         </Container>

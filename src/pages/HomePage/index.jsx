@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { Grid } from '@material-ui/core';
+import { Grid, Typography, Hidden } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 import styles from './style';
@@ -8,7 +8,7 @@ import paths from './paths';
 
 import axios from 'axios';
 
-import { CovidGridData, Map, SearchBar, Charts } from "../../components";
+import { CovidGridData, Map, SearchBar, Charts, Resources } from "../../components";
 
 const useStyles = makeStyles(styles);
 
@@ -65,14 +65,22 @@ function HomePage() {
     }, []);
 
     return (
-        <Grid container className={classes.homePage}>
-            <Grid item xs={12} sm={6} className={classes.section}>
+        <Grid container className={classes.homePage} spacing={10}>
+            <Hidden mdUp>
+                <Grid xs={12}>
+                    <Typography variant="h4" className={classes.brandingName}>
+                        Indi<Typography variant="h4" className={classes.secondaryColorBrandingName}>Cov</Typography>
+                    </Typography>
+                </Grid>
+            </Hidden>
+            <Grid item xs={12} md={6} className={classes.section}>
+                {covidData && <SearchBar mapArray={mapArray} showMapData={showMapData} />}
                 {covidData && <Map mapArray={mapArray} showMapData={showMapData} />}
                 {covidData && <CovidGridData mapArray={mapArray} covidData={covidData} />}
             </Grid>
-            <Grid item xs={12} sm={6} className={classes.section}>
-                {covidData && <SearchBar mapArray={mapArray} showMapData={showMapData} />}
+            <Grid item xs={12} md={6} className={classes.section}>
                 {covidDailyData && <Charts covidData={covidDailyData} mapArray={mapArray} index={index} />}
+                {covidData && <Resources />}
             </Grid>
         </Grid>
     );

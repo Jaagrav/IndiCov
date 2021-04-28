@@ -14,7 +14,7 @@ export default function styles(theme) {
             borderRadius: 9999
         },
         autoCompleteInput: {
-            fontSize: theme.typography.h6.fontSize,
+            fontSize: theme.typography.subtitle1.fontSize,
             width: "100%",
             backgroundColor: "transparent",
             color: theme.palette.text.primary,

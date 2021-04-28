@@ -13,6 +13,7 @@ const theme = {
       green: "#34BE42",
       yellow: "#C9CC1F",
       red: "#CC1F5E",
+      teal: "#00CCD9"
     },
     text: {
       primary: "#E7EFFF",
@@ -35,8 +36,8 @@ const theme = {
     values:{
       xs: 0, 
       sm: 600, 
-      md: 960, 
-      lg: 1280, 
+      md: 1030, 
+      lg: 1380, 
       xl: 1440
     }
   }
