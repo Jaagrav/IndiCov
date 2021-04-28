@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 import { Grid, IconButton, IconField } from '@material-ui/core';
 import { useAutocomplete } from '@material-ui/lab';
@@ -23,6 +23,7 @@ function SearchBar({ mapArray, showMapData }) {
         options: states,
         getOptionLabel: (option) => option.title,
     });
+    const autoCompleteRef = useRef();
 
 
     useEffect(() => {
@@ -31,9 +32,16 @@ function SearchBar({ mapArray, showMapData }) {
             setStates(prevStates => [...prevStates, mapArray[i]]);
     }, [mapArray]);
 
+    const showMap = (index, e) => {
+        showMapData(null, index, null);
+        autoCompleteRef.current.children[0].children[0].blur();
+        // setTimeout(() =>
+        //     a.blur(), 100);
+    };
+
     return (
         <Grid container>
-            <div className={classes.autoComplete}>
+            <div className={classes.autoComplete} ref={autoCompleteRef}>
                 <div className={classes.autoCompleteInputBox} {...getRootProps()}>
                     <input className={classes.autoCompleteInput} placeholder="Search States" {...getInputProps()} />
                     <IconButton color="primary">
@@ -41,9 +49,9 @@ function SearchBar({ mapArray, showMapData }) {
                     </IconButton>
                 </div>
                 {groupedOptions.length > 0 ? (
-                    <ul className={classes.autoCompleteBox} {...getListboxProps()}>
+                    <ul className={classes.autoCompleteBox} {...getListboxProps()} >
                         {groupedOptions.map((option, index) => (
-                            <li {...getOptionProps({ option, index })} onClick={() => showMapData(null, option.index, null)}>{option.title}</li>
+                            <li {...getOptionProps({ option, index })} onClick={(e) => showMap(option.index, e)}>{option.title}</li>
                         ))}
                     </ul>
                 ) : null}
