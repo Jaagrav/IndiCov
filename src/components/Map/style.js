@@ -18,6 +18,8 @@ export default function styles(theme) {
             }
         },
         landSelected: {
+            strokeWidth: 2,
+            stroke: `${theme.palette.text.secondary} !important`,
             fill: `${theme.palette.highlight.blue} !important`
         },
     }

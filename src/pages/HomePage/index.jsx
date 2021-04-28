@@ -18,7 +18,8 @@ function HomePage() {
     const [mapArray, setMapArray] = useState(paths());
 
     const showMapData = (e, index, stateName) => {
-        e.stopPropagation();
+        if (e)
+            e.stopPropagation();
         const tempMapArray = mapArray;
         for (let i in tempMapArray)
             tempMapArray[i].selected = false;
@@ -47,12 +48,12 @@ function HomePage() {
 
     return (
         <Grid container className={classes.homePage}>
-            <Grid item xs={12} sm={6}>
-                <Map mapArray={mapArray} showMapData={showMapData} />
+            <Grid item xs={12} sm={6} className={classes.section}>
+                {covidData && <Map mapArray={mapArray} showMapData={showMapData} />}
                 {covidData && <CovidGridData mapArray={mapArray} covidData={covidData} />}
             </Grid>
-            <Grid item>
-                {/* <SearchBar covidData={covidData} /> */}
+            <Grid item xs={12} sm={6} className={classes.section}>
+                {covidData && <SearchBar mapArray={mapArray} showMapData={showMapData} />}
             </Grid>
         </Grid>
     );
