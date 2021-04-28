@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { Grid, Typography, Card, CardContent } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 import styles from './style';
@@ -8,7 +8,7 @@ import paths from './paths';
 
 import axios from 'axios';
 
-import { CovidGridData, Map, SearchBar } from "../../components";
+import { CovidGridData, Map, SearchBar, Charts } from "../../components";
 
 const useStyles = makeStyles(styles);
 
@@ -54,6 +54,7 @@ function HomePage() {
             </Grid>
             <Grid item xs={12} sm={6} className={classes.section}>
                 {covidData && <SearchBar mapArray={mapArray} showMapData={showMapData} />}
+                {covidData && <Charts />}
             </Grid>
         </Grid>
     );
