@@ -27,7 +27,7 @@ export default function styles(theme) {
             right: 'unset',
             left: 0,
             zIndex: -9,
-            borderRadius: 8,
+            borderRadius: 4,
         },
         tabs: {
             width: "100%",

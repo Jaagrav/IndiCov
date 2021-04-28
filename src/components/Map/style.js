@@ -4,6 +4,10 @@ export default function styles(theme) {
         mapSvg: {
             height: 650,
             width: "100%",
+            [theme.breakpoints.down('md')]: {
+                
+                height: 465,
+            }
         },
         land: {
             fill: "transparent",

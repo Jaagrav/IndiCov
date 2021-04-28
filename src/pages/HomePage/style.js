@@ -14,7 +14,7 @@ export default function styles(theme) {
         },
         brandingName: {
             textAlign: 'center',
-            padding: "20px 0"
+            padding: "20px 0 0 0"
         },
         secondaryColorBrandingName: {
             display: "inline-block",

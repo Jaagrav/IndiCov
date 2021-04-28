@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { Drawer, Tabs, Tab, Typography, Button } from '@material-ui/core';
+import { Tabs, Tab, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 import styles from './style';
@@ -9,6 +9,7 @@ import styles from './style';
 import routesData from "../../routes/routesData";
 
 import { HiSun } from "react-icons/hi";
+import { FiShare2 } from "react-icons/fi";
 
 const useStyles = makeStyles(styles);
 
@@ -19,7 +20,7 @@ function a11yProps(index) {
     };
 }
 
-function SideBar({ value, setValue }) {
+function BottomNavBar({ value, setValue }) {
     const classes = useStyles();
     const history = useHistory();
 
@@ -29,18 +30,9 @@ function SideBar({ value, setValue }) {
     };
 
     return (
-        <Drawer
-            variant="permanent"
-            classes={{
-                root: classes.drawerRoot,
-                paper: classes.drawerPaper
-            }}
-        >
-            <Typography variant="h6" className={classes.brandingName}>
-                Indi<Typography variant="h6" className={classes.secondaryColorBrandingName}>Cov</Typography>
-            </Typography>
+        <div className={classes.bottomNavBar}>
             <Tabs
-                orientation="vertical"
+                orientation="horizontal"
                 value={value}
                 onChange={handleChange}
                 aria-label="Vertical tabs example"
@@ -60,9 +52,12 @@ function SideBar({ value, setValue }) {
                     else return null;
                 })}
             </Tabs>
-            <Button className={classes.tab}><HiSun /></Button>
-        </Drawer>
+            <div className={classes.otherBtns}>
+                <Button className={classes.otherBtn}><HiSun /></Button>
+                <Button className={classes.otherBtn}><FiShare2 /></Button>
+            </div>
+        </div>
     );
 }
 
-export default SideBar;
+export default BottomNavBar;

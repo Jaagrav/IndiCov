@@ -36,9 +36,9 @@ const theme = {
     values:{
       xs: 0, 
       sm: 600, 
-      md: 1030, 
-      lg: 1380, 
-      xl: 1440
+      md: 1130, 
+      lg: 1500, 
+      xl: 1690
     }
   }
 };

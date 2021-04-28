@@ -15,7 +15,7 @@ function Map({ mapArray, showMapData }) {
                 xmlns="http://www.w3.org/2000/svg"
                 version="1.1"
                 className={classes.mapSvg}
-                viewBox="0 70 650 740"
+                viewBox="-20 70 650 740"
                 onClick={e => { showMapData(e, null, "TT"); }}
             >
                 <g>

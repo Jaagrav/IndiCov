@@ -9,7 +9,7 @@ export default function styles(theme) {
         autoCompleteInputBox: {
             display: 'flex',
             alignItems: 'center',
-            padding: "4px 6px 4px 16px",
+            padding: "0 0 0 16px",
             border: `2px solid ${theme.palette.text.secondary}`,
             borderRadius: 9999
         },

@@ -68,8 +68,8 @@ function HomePage() {
         <Grid container className={classes.homePage} spacing={10}>
             <Hidden mdUp>
                 <Grid xs={12}>
-                    <Typography variant="h4" className={classes.brandingName}>
-                        Indi<Typography variant="h4" className={classes.secondaryColorBrandingName}>Cov</Typography>
+                    <Typography variant="h5" className={classes.brandingName}>
+                        Indi<Typography variant="h5" className={classes.secondaryColorBrandingName}>Cov</Typography>
                     </Typography>
                 </Grid>
             </Hidden>

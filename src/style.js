@@ -29,6 +29,7 @@ export default function styles(theme) {
       padding: "0 100px",
       [theme.breakpoints.down('md')]: {
         padding: 0,
+        paddingBottom: 55
       },
     }
   }
