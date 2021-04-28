@@ -39,7 +39,7 @@ function Resources() {
             <ButtonBase className={classes.buttonBase}>
                 <Card className={classes.card} button>
                     <Oxygen className={classes.oxygenIconButton} />
-                    <Typography className={classes.oxygenIconButton} variant="h6">Oxygen</Typography>
+                    <Typography className={classes.oxygenIconButton} variant="subtitle1">Oxygen</Typography>
                     <IconButton className={classes.oxygenIconButton}>
                         <AiOutlineArrowRight />
                     </IconButton>
@@ -49,7 +49,7 @@ function Resources() {
             <ButtonBase className={classes.buttonBase}>
                 <Card className={classes.card} button>
                     <FaAmbulance className={classes.ambulanceIconButton} />
-                    <Typography className={classes.ambulanceIconButton} variant="h6">Ambulance</Typography>
+                    <Typography className={classes.ambulanceIconButton} variant="subtitle1">Ambulance</Typography>
                     <IconButton className={classes.ambulanceIconButton}>
                         <AiOutlineArrowRight />
                     </IconButton>
@@ -59,7 +59,7 @@ function Resources() {
             <ButtonBase className={classes.buttonBase}>
                 <Card className={classes.card} button>
                     <FaBed className={classes.bedsIconButton} />
-                    <Typography className={classes.bedsIconButton} variant="h6">Beds</Typography>
+                    <Typography className={classes.bedsIconButton} variant="subtitle1">Beds</Typography>
                     <IconButton className={classes.bedsIconButton}>
                         <AiOutlineArrowRight />
                     </IconButton>
@@ -69,7 +69,7 @@ function Resources() {
             <ButtonBase className={classes.buttonBase}>
                 <Card className={classes.card} button>
                     <MdPhoneInTalk className={classes.helplineIconButton} />
-                    <Typography className={classes.helplineIconButton} variant="h6">Helpline</Typography>
+                    <Typography className={classes.helplineIconButton} variant="subtitle1">Helpline</Typography>
                     <IconButton className={classes.helplineIconButton}>
                         <AiOutlineArrowRight />
                     </IconButton>
@@ -79,7 +79,7 @@ function Resources() {
             <ButtonBase className={classes.buttonBase}>
                 <Card className={classes.card} button>
                     <FaSyringe className={classes.medicineIconButton} />
-                    <Typography className={classes.medicineIconButton} variant="h6">Medicine</Typography>
+                    <Typography className={classes.medicineIconButton} variant="subtitle1">Medicine</Typography>
                     <IconButton className={classes.medicineIconButton}>
                         <AiOutlineArrowRight />
                     </IconButton>

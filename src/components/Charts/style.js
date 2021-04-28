@@ -8,7 +8,7 @@ export default function styles(theme) {
             [theme.breakpoints.down('md')]: {
                 gridTemplateColumns: "1fr",
                 gridGap: 16,
-                gridTemplateRows: "1fr 85px",
+                gridTemplateRows: "1fr 65px",
             },
             
             maxHeight: 400,
@@ -58,6 +58,7 @@ export default function styles(theme) {
             },
             [theme.breakpoints.down('md')]: {
                 width: "25%",
+                margin: 0,
             }
         },  
         cardConfirmedFigures: {
