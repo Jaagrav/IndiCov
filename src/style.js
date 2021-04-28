@@ -14,6 +14,21 @@ export default function styles(theme) {
         backgroundRepeat: "no-repeat",
         backgroundAttachment: "fixed",
       },
+      "::-webkit-scrollbar": {
+        width: 8,
+        background: theme.palette.background.containerColor
+      },
+      "::-webkit-scrollbar-track": {
+        background: theme.palette.background.containerColor
+      },
+      "::-webkit-scrollbar-thumb": {
+        background: theme.palette.text.secondary,
+        borderRadius: 4
+      },
+      "::selection": {
+        background: "#ae00b4",
+        color: "#fff"
+      }
     },
     app: {
       position: "absolute",
