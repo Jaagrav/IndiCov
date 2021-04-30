@@ -26,8 +26,8 @@ export default function styles(theme) {
         borderRadius: 4
       },
       "::selection": {
-        background: "#ae00b4",
-        color: "#fff"
+        background: `${theme.palette.text.blue}4a`,
+        color: theme.palette.highlight.primary,
       }
     },
     app: {
@@ -42,7 +42,7 @@ export default function styles(theme) {
       display: "flex",
       justifyContent: "center",
       padding: "0 100px",
-      [theme.breakpoints.down('md')]: {
+      [theme.breakpoints.down('sm')]: {
         padding: 0,
         paddingBottom: 55
       },

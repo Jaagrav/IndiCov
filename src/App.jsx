@@ -21,7 +21,7 @@ function Content() {
   return (
     <div className={classes.app}>
       <Router>
-        <Hidden mdDown>
+        <Hidden only={["sm", "xs"]}>
           <SideBar value={value} setValue={setValue} />
         </Hidden>
         <Container maxWidth="lg" className={classes.appContainer}>

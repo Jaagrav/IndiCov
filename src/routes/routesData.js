@@ -1,9 +1,12 @@
-import {HomePage, AboutPage} from "../pages";
+import {HomePage, AboutPage, ResourcesPage} from "../pages";
 
 import {
   AiFillHome,
-  AiFillInfoCircle
+  AiFillInfoCircle,
+  AiFillSafetyCertificate
 } from "react-icons/ai";
+
+import { GrResources } from "react-icons/gr";
 
 const routesData = [
   {
@@ -12,6 +15,13 @@ const routesData = [
     showOnHeader: true,
     component: <HomePage />,
     icon: <AiFillHome />,
+  },
+  {
+    pageName: "Resources",
+    pageURL: "/resources",
+    showOnHeader: true,
+    component: <ResourcesPage />,
+    icon: <AiFillSafetyCertificate />
   },
   {
     pageName: "About",

@@ -73,12 +73,12 @@ function HomePage() {
                     </Typography>
                 </Grid>
             </Hidden>
-            <Grid item xs={12} md={6} className={classes.section}>
+            <Grid item sm={12} md={6} className={classes.section}>
                 {covidData && <SearchBar mapArray={mapArray} showMapData={showMapData} />}
                 {covidData && <Map mapArray={mapArray} showMapData={showMapData} />}
                 {covidData && <CovidGridData mapArray={mapArray} covidData={covidData} />}
             </Grid>
-            <Grid item xs={12} md={6} className={classes.section}>
+            <Grid item sm={12} md={6} className={classes.section}>
                 {covidDailyData && <Charts covidData={covidDailyData} mapArray={mapArray} index={index} />}
                 {covidData && <Resources />}
             </Grid>

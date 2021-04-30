@@ -61,7 +61,7 @@ export default function Charts({ covidData, mapArray, index }) {
                 <Graph covidData={covidData} mapArray={mapArray} value={value} index={index} />
             </Box>
 
-            <Hidden mdUp>
+            <Hidden lgUp>
                 <Tabs
                     orientation="horizontal"
                     variant="scrollable"

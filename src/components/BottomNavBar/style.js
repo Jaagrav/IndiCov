@@ -9,12 +9,12 @@ export default function styles(theme) {
             margin: 'auto',
             backgroundColor: theme.palette.background.containerColor,
             display: 'grid',
-            gridTemplateColumns: "1fr 1fr"
+            gridTemplateColumns: "1fr 25%"
         },
         otherBtns: {
             width: "100%",
             display: 'grid',
-            gridTemplateColumns: "1fr 1fr"
+            gridTemplateColumns: "1fr"
         },
         otherBtn: {
             padding: "20px 0",
@@ -35,7 +35,7 @@ export default function styles(theme) {
         tab: {
             padding: "20px 0",
             height: "100%",
-            width: "50%",
+            width: "33.3%",
             minWidth: "unset",
             maxWidth: "unset",
             fontSize: "1.54rem",

@@ -60,7 +60,7 @@ function CovidGridData({ mapArray, covidData }) {
         <Grid container>
             <Typography gutterBottom variant="h5">Cases in <Typography variant="h5" className={classes.blueText}>{covidGridData.stateName}</Typography></Typography>
             <Grid container spacing={2}>
-                <Grid item xs={6} md={3}>
+                <Grid item xs={6} lg={3}>
                     <Card className={classes.card}>
                         <CardContent>
                             <Typography className={classes.cardType} variant="caption">Confirmed</Typography>
@@ -68,7 +68,7 @@ function CovidGridData({ mapArray, covidData }) {
                         </CardContent>
                     </Card>
                 </Grid>
-                <Grid item xs={6} md={3}>
+                <Grid item xs={6} lg={3}>
                     <Card className={classes.card}>
                         <CardContent>
                             <Typography className={classes.cardType} variant="caption">Recovered</Typography>
@@ -76,7 +76,7 @@ function CovidGridData({ mapArray, covidData }) {
                         </CardContent>
                     </Card>
                 </Grid>
-                <Grid item xs={6} md={3}>
+                <Grid item xs={6} lg={3}>
                     <Card className={classes.card}>
                         <CardContent>
                             <Typography className={classes.cardType} variant="caption">Active</Typography>
@@ -84,7 +84,7 @@ function CovidGridData({ mapArray, covidData }) {
                         </CardContent>
                     </Card>
                 </Grid>
-                <Grid item xs={6} md={3}>
+                <Grid item xs={6} lg={3}>
                     <Card className={classes.card}>
                         <CardContent>
                             <Typography className={classes.cardType} variant="caption">Deaths</Typography>
