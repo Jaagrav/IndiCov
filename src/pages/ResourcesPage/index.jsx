@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import { useHistory } from 'react-router-dom';
 
 import { Grid, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
@@ -8,11 +8,15 @@ import styles from './style';
 
 import axios from 'axios';
 
-import { ResourcesStateSearch, ServicesSearch } from '../../components';
+import { ResourcesStateSearch, ServicesSearch, ResourceCards } from '../../components';
 
 const useStyles = makeStyles(styles);
 function ResourcesPage() {
-    const classes = useStyles();
+    const classes = useStyles(),
+        history = useHistory();
+
+    const [stateName, setStateName] = useState("India");
+    const [service, setService] = useState("All");
     const [resources, setResources] = useState({
         ambulance: null,
         helpline: null,
@@ -55,13 +59,23 @@ function ResourcesPage() {
         axios(oxygenData).then(function (response) { setResources(prevResources => { return { ...prevResources, oxygen: response.data }; }); });
     }, []);
 
+    useEffect(() => {
+        if (stateName === "India" || service === "All")
+            history.replace(`?state=${stateName}&service=${service}`);
+        else
+            history.push(`?state=${stateName}&service=${service}`);
+    }, [stateName, service]);
+
     return (
-        <Grid container className={classes.homePage} spacing={10}>
+        <Grid container className={classes.homePage}>
             <Grid item sm={12} md={6} className={classes.section}>
-                <ResourcesStateSearch />
+                <ResourcesStateSearch setStateName={setStateName} />
             </Grid>
             <Grid item sm={12} md={6} className={classes.section}>
-                <ServicesSearch />
+                <ServicesSearch setService={setService} />
+            </Grid>
+            <Grid container className={classes.section} >
+                <ResourceCards resources={resources} />
             </Grid>
         </Grid>
     );

@@ -10,3 +10,4 @@ export {default as Tip} from './Tip';
 export {default as Member} from './Member';
 export {default as ResourcesStateSearch} from './ResourcesStateSearch';
 export {default as ServicesSearch} from './ServicesSearch';
+export {default as ResourceCards} from './ResourceCards';

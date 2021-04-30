@@ -4,13 +4,11 @@ export default function styles(theme) {
             position: 'relative',
             margin: "auto",
             verticalAlign: "middle",
-
         },
         section: {
+            width: "100%",
             position: 'relative',
-            [theme.breakpoints.down('md')]: {
-              padding: `20px !important`,
-            },
+            padding: `12px 20px !important`,
         },
     }
 }

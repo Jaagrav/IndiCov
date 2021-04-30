@@ -10,9 +10,9 @@ import { IoMdArrowDropdown } from "react-icons/io";
 import styles from "./style";
 
 const useStyles = makeStyles(styles);
-function ServicesSearch() {
+function ServicesSearch({ setService }) {
     const classes = useStyles();
-    const [services, setServices] = useState(["Ambulance", "Helpline", "Hospital and Clinics", "Medicine", "Oxygen"]);
+    const [services, setServices] = useState(["All", "Ambulance", "Helpline", "Hospital and Clinics", "Medicine", "Oxygen"]);
     const {
         getRootProps,
         getInputProps,

@@ -11,7 +11,7 @@ import styles from "./style";
 import paths from "../../pages/HomePage/paths";
 
 const useStyles = makeStyles(styles);
-function ResourcesStateSearch() {
+function ResourcesStateSearch({ setStateName }) {
     const classes = useStyles();
     const [states, setStates] = useState([]);
     const {
