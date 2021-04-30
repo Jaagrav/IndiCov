@@ -8,3 +8,5 @@ export {default as Graph} from './Graph';
 export {default as Resources} from './Resources';
 export {default as Tip} from './Tip';
 export {default as Member} from './Member';
+export {default as ResourcesStateSearch} from './ResourcesStateSearch';
+export {default as ServicesSearch} from './ServicesSearch';

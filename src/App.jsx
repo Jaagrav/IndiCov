@@ -16,7 +16,8 @@ import { theme, createMuiTheme, ThemeProvider } from "./theme";
 const useStyles = makeStyles(styles);
 function Content() {
   const classes = useStyles();
-  const [value, setValue] = useState(0);
+  const pathname = window.location.pathname;
+  const [value, setValue] = useState(pathname === "/" ? 0 : (pathname === "/resources") ? 1 : (pathname === "/about") ? 2 : 0);
 
   return (
     <div className={classes.app}>

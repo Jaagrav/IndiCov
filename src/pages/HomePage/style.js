@@ -5,7 +5,7 @@ export default function styles(theme) {
             margin: "auto",
             verticalAlign: "middle",
 
-        },
+        }, 
         section: {
             position: 'relative',
             [theme.breakpoints.down('md')]: {
