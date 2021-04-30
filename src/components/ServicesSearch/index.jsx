@@ -29,6 +29,7 @@ function ServicesSearch({ setService }) {
     const showResources = (index, e) => {
         autoCompleteRef.current.children[0].children[0].blur();
         console.log(index);
+        setService(services[index]);
     };
 
     return (

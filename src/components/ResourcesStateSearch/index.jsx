@@ -36,6 +36,7 @@ function ResourcesStateSearch({ setStateName }) {
 
     const showResources = (index, e) => {
         autoCompleteRef.current.children[0].children[0].blur();
+        setStateName(paths()[index].title);
     };
 
     return (

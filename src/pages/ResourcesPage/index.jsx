@@ -60,7 +60,7 @@ function ResourcesPage() {
     }, []);
 
     useEffect(() => {
-        if (stateName === "India" || service === "All")
+        if (stateName === "India" && service === "All")
             history.replace(`?state=${stateName}&service=${service}`);
         else
             history.push(`?state=${stateName}&service=${service}`);
