@@ -9,6 +9,7 @@ import styles from './style';
 import routesData from "../../routes/routesData";
 
 import { HiSun } from "react-icons/hi";
+import { FiShare2 } from "react-icons/fi";
 
 const useStyles = makeStyles(styles);
 
@@ -61,6 +62,7 @@ function SideBar({ value, setValue }) {
                 })}
             </Tabs>
             <Button className={classes.tab}><HiSun /></Button>
+            <Button className={`${classes.tab} ${classes.shareBtn}`}><FiShare2 /></Button>
         </Drawer>
     );
 }

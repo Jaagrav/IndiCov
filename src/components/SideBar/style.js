@@ -10,6 +10,8 @@ export default function styles(theme) {
         },
         drawerRoot: {
             position: 'fixed',
+            height: "100%",
+            paddingBottom: 24
         },
         drawerPaper: {
             position: "relative", 
@@ -37,5 +39,8 @@ export default function styles(theme) {
             left: 0,
             zIndex: -9,
           },
+        shareBtn: {
+            marginTop: "auto",
+        }
     }
 }
