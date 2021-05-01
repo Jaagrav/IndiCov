@@ -2,7 +2,10 @@ export default function style(theme) {
     return {
       container: {
         width: '100%',
-        padding: "14px 0"
+        padding: 14,
+        "&.Mui-selected": {
+          padding: "14px 0",
+        },
       },
       infoHolder: {
         display:'flex',
