@@ -28,6 +28,11 @@ export default function styles(theme) {
       "::selection": {
         background: `${theme.palette.text.blue}4a`,
         color: theme.palette.highlight.primary,
+      },
+      [theme.breakpoints.down('sm')]: {
+        "::-webkit-scrollbar": {
+          display: "none"
+        },
       }
     },
     app: {

@@ -8,7 +8,7 @@ export default function styles(theme) {
             height: '100%',
             backgroundColor: theme.palette.background.containerColor,
             display: "grid",
-            gridTemplateRows: "1fr 10px auto",
+            gridTemplateRows: "1fr 1fr 1fr 1fr 10px auto",
         },
         phoneNums: {
             padding: "4px 0",
@@ -39,13 +39,19 @@ export default function styles(theme) {
             whiteSpace: "nowrap",
             textOverflow: "ellipsis"
         },
+        dividerHolder: {
+            height: "10px",
+        },
         divider: {
             backgroundColor: theme.palette.text.secondary
         },
         checkedOn: {
-            textAlign: 'right'
+            [theme.breakpoints.down('sm')]: {
+                textAlign: 'left',
+            }
         },
         footer: {
+            width: '100%',
             padding: "4px 0 0 0",
             color: theme.palette.text.secondary
         }

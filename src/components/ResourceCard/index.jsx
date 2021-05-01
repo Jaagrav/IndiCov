@@ -17,14 +17,12 @@ const ResourceCard = ({ index, style, data }) => {
         <Grid item sm={12} md={6}>
             <Box style={style} className={classes.resourceCardHolder}>
                 <Card className={classes.resourceCard}>
-                    <Grid className={classes.resourceCardInfo}>
-                        <Typography variant="h5" className={classes.description}>{(data[index]?.description) ? data[index]?.description : data[index]?.comment ? data[index]?.comment : "Unknown"}</Typography>
-                        <Typography variant="h6" className={classes.description}>{(data[index]?.name) ? data[index]?.name : "Unknown"}</Typography>
-                        <Typography variant="subtitle1" className={classes.district}><TiLocation /><span>{data[index]?.district}, {data[index]?.state}</span></Typography>
-                        <Typography variant="subtitle1" className={classes.phoneNums}><MdPhone /><a href={`tel:${data[index]?.phone1}`}>{data[index]?.phone1}</a><a href={`tel:${data[index]?.phone2}`}>{data[index]?.phone2}</a></Typography>
-                    </Grid>
+                    <Typography variant="h5" className={classes.description}>{(data[index]?.description) ? data[index]?.description : data[index]?.comment ? data[index]?.comment : "Unknown"}</Typography>
+                    <Typography variant="h6" className={classes.description}>{(data[index]?.name) ? data[index]?.name : "Unknown"}</Typography>
+                    <Typography variant="subtitle1" className={classes.district}><TiLocation /><span>{data[index]?.district}, {data[index]?.state}</span></Typography>
+                    <Typography variant="subtitle1" className={classes.phoneNums}><MdPhone /><a href={`tel:${data[index]?.phone1}`}>{data[index]?.phone1}</a><a href={`tel:${data[index]?.phone2}`}>{data[index]?.phone2}</a></Typography>
                     <Divider className={classes.divider} light />
-                    <Grid container className={classes.cardFooter}>
+                    <Grid container item className={classes.cardFooter}>
                         <Grid item sm={6} className={classes.footer}>
                             <Typography variant="subtitle1">Status: {data[index]?.verificationStatus}</Typography>
                         </Grid>
