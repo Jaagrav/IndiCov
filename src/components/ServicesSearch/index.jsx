@@ -26,12 +26,12 @@ function ServicesSearch({ setService, service }) {
     const autoCompleteRef = useRef();
 
     const showResources = (index, e) => {
-        autoCompleteRef.current.children[0].children[0].blur();
         const event = {
             target: { value: services[index] }
         };
         getInputProps().onChange(event);
         setService(services[index]);
+        autoCompleteRef.current.children[0].children[0].blur();
     };
 
     useEffect(() => {
