@@ -18,6 +18,7 @@ import Devraj from "./assets/Devraj 1.png";
 import Jaagrav from "./assets/Jaagrav.png";
 import Shrutika from "./assets/Shrutika 1.png";
 import Trusha from "./assets/Trusha.png";
+import Shridhar from "./assets/Shridhar.png";
 
 const useStyles = makeStyles(styles);
 
@@ -111,6 +112,9 @@ function AboutPage() {
                         </Grid>
                         <Grid sm={12} md={4}>
                             <Member image={Trusha} name="Trusha Neogi" occ1="Graphic & Content Lead" occ2="Graphic Designer" linkedIn="https://www.linkedin.com/in/trusha-neogi-6a69bb191/" instagram="https://www.instagram.com/tuuushaa/" />
+                        </Grid>
+                        <Grid sm={12} md={4}>
+                            <Member image={Shridhar} name="Shridhar Kamat" occ1="Development Team" occ2="Web Developer" linkedIn="https://www.linkedin.com/in/shridhar-kamat-1015a41bb" github="https://github.com/Shridhar-dev" website="https://thehardwaronzone.com/" />
                         </Grid>
                     </Grid>
                 </Grid>
