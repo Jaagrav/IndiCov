@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# IndiCov | A platform for all your covid needs. 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![IndiCov](https://user-images.githubusercontent.com/65373279/116795491-fdb16100-aaf2-11eb-8d99-09d0322085d8.png)
 
-## Available Scripts
+IndiCov is a platform that works towards helping patients during this pandemic by informing and constantly updating them of the available resources. People can visit this site and check in the status of the resource availability according to the states or district wise.
 
-In the project directory, you can run:
+## APIs Used
+ 
+| Data                              | URL                                                                             |
+| --------------------------------- | ------------------------------------------------------------------------------- |
+| List of districts with Data       | <https://life-api.coronasafe.network/data/active_district_data.json>         |
+| Ambulance availability            | <https://life-api.coronasafe.network/data/ambulance.json>                       |
+| Helpline Numbers                  | <https://life-api.coronasafe.network/data/helpline.json>                        |
+| Hospitals and Beds                | <https://life-api.coronasafe.network/data/hospital.json>          |
+| Medicine availability             | <https://life-api.coronasafe.network/data/medicine.json>                        |
+| Oxygen availability               | <https://life-api.coronasafe.network/data/oxygen.json>                          |
 
-### `yarn start`
+## Want to help with coding?
+Join our discord and get in touch with several other developers.
+<br>
+<a href="https://discord.gg/druweDMn3s" style="text-decoration:none">
+  <img height="30" src="https://img.shields.io/badge/discord-darkblue.svg?&style=for-the-badge&logo=discord&logoColor=white" />
+</a>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# How you can start contributing to IndiCov?
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Types of Contributions:
+1. Code (Front-End)
+2. Manpower (volunteers for verification)
+3. Amplification - Help spread the word on social media
 
-### `yarn test`
+## Ready to start
+We welcome everyone to join in the construction of the project. As a pre requirement, you need to have a preliminary understanding of React , this is a good learning document for [React](https://reactjs.org/docs/getting-started.html).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+For basic operation of Git, you can refer to [GitHub's help documentation](https://help.github.com/en/github/using-git)
 
-### `yarn build`
+We are using Material UI for developing the Website , [Material UI Docs](https://material-ui.com/) is an amazing place to get started and refer.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Any kind of Contributions is Accepted.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Contributing
+[Fork this repository](https://github.com/Design-and-Code/IndiCov) to your own account and then clone it.
+Create a new branch for your changes: `git checkout -b {BRANCH_NAME}`.
+You can either use npm or yarn as your package manager.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+## Getting Started
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+First, run the development server:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+npm install
+npm run dev
+# or
+yarn dev
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Open http://localhost:3000 with your browser to see the result.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+You can start editing the page by modifying pages/index.js. The page auto-updates as you edit the file.
 
-## Learn More
+# Got stuck ?
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Create new issue to tell us: create [issue](https://github.com/Design-and-Code/IndiCov/issues/new/choose).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Feel Free to Ask on our [Discord](https://discord.gg/druweDMn3s).
