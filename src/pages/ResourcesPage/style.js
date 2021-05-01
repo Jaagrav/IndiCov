@@ -11,7 +11,15 @@ export default function styles(theme) {
             padding: `12px 20px !important`,
         },
         resourcesSection: {
-            height: "100vh",
-        }
+            height: "calc(100vh - 100px)",
+        },
+        brandingName: {
+            textAlign: 'center',
+            padding: "12px 0 0 0"
+        },
+        secondaryColorBrandingName: {
+            display: "inline-block",
+            color: theme.palette.highlight.blue
+        },
     }
 }

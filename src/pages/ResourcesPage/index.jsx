@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
-import { Grid, Typography } from '@material-ui/core';
+import { Grid, Typography, Hidden } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 import styles from './style';
@@ -75,6 +75,13 @@ function ResourcesPage() {
 
     return (
         <Grid container className={classes.homePage}>
+            <Hidden mdUp>
+                <Grid xs={12}>
+                    <Typography variant="h5" className={classes.brandingName}>
+                        Indi<Typography variant="h5" className={classes.secondaryColorBrandingName}>Cov</Typography>
+                    </Typography>
+                </Grid>
+            </Hidden>
             <Grid item sm={12} md={6} className={classes.section}>
                 <ResourcesStateSearch setStateName={setStateName} />
             </Grid>
