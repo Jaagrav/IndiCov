@@ -3,7 +3,7 @@ export default function style(theme) {
       container: {
         width: '100%',
         padding: 14,
-        "&.Mui-selected": {
+        [theme.breakpoints.down('md')]: {
           padding: "14px 0",
         },
       },
