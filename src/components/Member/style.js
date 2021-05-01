@@ -25,7 +25,7 @@ export default function style(theme) {
       },
       image: {
         width: "180px",
-        height: '180px',
+        // height: '180px',
         margin:'0rem 4.5rem',
         border: '6.30612px solid' + theme.palette.background.containerColor,
         objectFit:'contain',

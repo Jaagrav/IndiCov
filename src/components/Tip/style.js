@@ -4,6 +4,7 @@ export default function style(theme) {
       margin: "40px 5rem",
       display: "grid",
       gridTemplateColumns: "auto 1fr",
+      padding: " 0 16px",
       [theme.breakpoints.down("sm")]: {
         margin: "10px 0",
       },

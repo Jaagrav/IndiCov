@@ -9,7 +9,7 @@ import style from "./style";
 import Links from '../Links/index'
 const useStyles = makeStyles(style);
 
-function Member({ image, linkedIn, instagram, github, website}) {
+function Member({ name, occ1, occ2, image, linkedIn, instagram, github, website}) {
   const classes = useStyles();
   const [IsDesktop, setIsDesktop] = useState(window.innerWidth > 900)
   const updateMedia = () => {
@@ -27,9 +27,9 @@ function Member({ image, linkedIn, instagram, github, website}) {
           <img className={IsDesktop ? classes.image : classes.image2 } src={image} alt="Member" />
         </div>
         <div className={classes.infoBox}>
-          <Typography variant="h5" className={classes.title}>Devraj Chatribin</Typography>
-          <Typography variant="h6" className={classes.role}>FOUNDER & DESIGN LEAD</Typography>
-          <Typography variant="subtitle2" className={classes.description}>Web Developer | UI/UX Designer</Typography>
+          <Typography variant="h5" className={classes.title}>{name}</Typography>
+          <Typography variant="h6" className={classes.role}>{occ1}</Typography>
+          <Typography variant="subtitle2" className={classes.description}>{occ2}</Typography>
           <div style={{display:'flex'}}>
               <Links linkedIn={linkedIn} instagram={instagram} github={github} website={website} />
           </div>
