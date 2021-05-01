@@ -18,6 +18,7 @@ function Content() {
   const classes = useStyles(), history = useHistory();
   let pathname = history.location.pathname;
   const [value, setValue] = useState(pathname === "/" ? 0 : (pathname === "/resources") ? 1 : (pathname === "/about") ? 2 : 0);
+  document.title = (pathname === "/" ? "Home" : (pathname === "/resources") ? "Resources" : (pathname === "/about") ? "About" : "Not Found") + " - IndiCov";
 
   useEffect(() => {
     return history.listen(e => {
