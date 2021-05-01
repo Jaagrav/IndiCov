@@ -10,6 +10,15 @@ export default function styles(theme) {
             display: "grid",
             gridTemplateRows: "1fr 1fr 1fr 1fr 10px auto",
         },
+        resourceDesc: {
+            width: "100%",
+            display: "grid",
+            gridTemplateColumns: "1fr auto",
+        },
+        shareBtn: {
+            color: theme.palette.highlight.blue,
+            margin: "-4px -8px 0 0"
+        },
         phoneNums: {
             padding: "4px 0",
             color: theme.palette.text.secondary,

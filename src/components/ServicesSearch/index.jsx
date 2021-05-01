@@ -1,10 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 
-import { Grid, IconButton, IconField } from '@material-ui/core';
+import { Grid, IconButton } from '@material-ui/core';
 import { useAutocomplete } from '@material-ui/lab';
 import { makeStyles } from '@material-ui/core/styles';
 
-import { RiSearch2Line } from "react-icons/ri";
 import { IoMdArrowDropdown } from "react-icons/io";
 
 import styles from "./style";
@@ -12,7 +11,7 @@ import styles from "./style";
 const useStyles = makeStyles(styles);
 function ServicesSearch({ setService }) {
     const classes = useStyles();
-    const services = ["All", "Ambulance", "Helpline", "Hospital and Clinics", "Medicine", "Oxygen"];
+    const services = ["All", "Ambulance", "Hospital and Clinics", "Medicine", "Oxygen"];
     const {
         getRootProps,
         getInputProps,

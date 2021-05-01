@@ -1,7 +1,7 @@
 export default function paths() {
     return [
         {
-            index: null,
+            index: 0,
             title: "India",
             selected: null,
             d: null,

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import { Grid, Typography, Card, IconButton, ButtonBase } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
@@ -14,9 +15,15 @@ import { MdPhoneInTalk } from 'react-icons/md';
 
 const useStyles = makeStyles(styles);
 
-function Resources() {
-    const classes = useStyles();
+function Resources({ mapArray, index }) {
+    const classes = useStyles(), history = useHistory();
     const [resources, setResources] = useState({});
+
+    const openResources = (service) => {
+        // console.log(mapArray[index].title, index);
+        history.push(`/resources?state=${mapArray[index].title}&service=${service}`);
+    };
+
     useEffect(() => {
         var configIndiaData = {
             method: 'get',
@@ -36,7 +43,7 @@ function Resources() {
     return (
         <Grid xs={12}>
             <Typography gutterBottom variant="h5">Resources</Typography>
-            <ButtonBase className={classes.buttonBase}>
+            <ButtonBase className={classes.buttonBase} onClick={() => openResources("Oxygen")}>
                 <Card className={classes.card} button>
                     <Oxygen className={classes.oxygenIconButton} />
                     <Typography className={classes.oxygenIconButton} variant="subtitle1">Oxygen</Typography>
@@ -46,7 +53,7 @@ function Resources() {
                 </Card>
             </ButtonBase>
 
-            <ButtonBase className={classes.buttonBase}>
+            <ButtonBase className={classes.buttonBase} onClick={() => openResources("Ambulance")}>
                 <Card className={classes.card} button>
                     <FaAmbulance className={classes.ambulanceIconButton} />
                     <Typography className={classes.ambulanceIconButton} variant="subtitle1">Ambulance</Typography>
@@ -56,7 +63,7 @@ function Resources() {
                 </Card>
             </ButtonBase>
 
-            <ButtonBase className={classes.buttonBase}>
+            <ButtonBase className={classes.buttonBase} onClick={() => openResources("Hospital and Clinics")}>
                 <Card className={classes.card} button>
                     <FaBed className={classes.bedsIconButton} />
                     <Typography className={classes.bedsIconButton} variant="subtitle1">Beds</Typography>
@@ -66,7 +73,7 @@ function Resources() {
                 </Card>
             </ButtonBase>
 
-            <ButtonBase className={classes.buttonBase}>
+            {/* <ButtonBase className={classes.buttonBase}>
                 <Card className={classes.card} button>
                     <MdPhoneInTalk className={classes.helplineIconButton} />
                     <Typography className={classes.helplineIconButton} variant="subtitle1">Helpline</Typography>
@@ -74,9 +81,9 @@ function Resources() {
                         <AiOutlineArrowRight />
                     </IconButton>
                 </Card>
-            </ButtonBase>
+            </ButtonBase> */}
 
-            <ButtonBase className={classes.buttonBase}>
+            <ButtonBase className={classes.buttonBase} onClick={() => openResources("Medicine")}>
                 <Card className={classes.card} button>
                     <FaSyringe className={classes.medicineIconButton} />
                     <Typography className={classes.medicineIconButton} variant="subtitle1">Medicine</Typography>

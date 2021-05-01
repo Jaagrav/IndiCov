@@ -12,6 +12,9 @@ export default function styles(theme) {
         },
         resourcesSection: {
             height: "calc(100vh - 100px)",
+            [theme.breakpoints.down('sm')]: {
+                height: "calc(100vh - 254px)",
+            }
         },
         brandingName: {
             textAlign: 'center',

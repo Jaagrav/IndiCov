@@ -58,6 +58,7 @@ function ResourcesPage() {
             url: 'https://life-api.coronasafe.network/data/oxygen_verified.json',
             headers: {}
         };
+        console.log("Fetching resources...");
 
         axios(ambulanceData).then(function (response) { setResources(prevResources => { return { ...prevResources, ambulance: response.data }; }); });
         axios(helplineData).then(function (response) { setResources(prevResources => { return { ...prevResources, helpline: response.data }; }); });
@@ -69,6 +70,10 @@ function ResourcesPage() {
     useEffect(() => {
         if (!stateName && !service)
             history.replace(`?state=India&service=All`);
+        else if (!stateName)
+            history.replace(`?state=India&service=${service}`);
+        else if (!service)
+            history.replace(`?state=${stateName}&service=All`);
         else
             history.push(`?state=${stateName}&service=${service}`);
     }, [stateName, service]);

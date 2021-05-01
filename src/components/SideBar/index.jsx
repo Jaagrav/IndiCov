@@ -29,6 +29,35 @@ function SideBar({ value, setValue }) {
         console.log(newValue);
     };
 
+    const share = () => {
+        let shareTxt = `
+        Get COVID related relief resources at https://indicov.co/${history.location.pathname}`;
+        let copyToClipboard = () => {
+            const copyTxt = document.createElement("textarea");
+            copyTxt.innerHTML = shareTxt;
+            document.body.parentNode.appendChild(copyTxt);
+            copyTxt.select();
+            document.execCommand("copy");
+            document.body.parentNode.removeChild(copyTxt);
+            alert('Resources Data has been copied to clipboard!');
+        };
+        if (navigator.share) {
+            navigator
+                .share({
+                    title: "IndiCov",
+                    text: shareTxt,
+                })
+                .then(() => {
+                    console.log("Thanks for sharing!");
+                })
+                .catch(() => {
+                    copyToClipboard();
+                });
+        } else {
+            copyToClipboard();
+        }
+    };
+
     return (
         <Drawer
             variant="permanent"
@@ -62,7 +91,7 @@ function SideBar({ value, setValue }) {
                 })}
             </Tabs>
             <Button className={classes.tab}><HiSun /></Button>
-            <Button className={`${classes.tab} ${classes.shareBtn}`}><FiShare2 /></Button>
+            <Button className={`${classes.tab} ${classes.shareBtn}`} onCLick={share}><FiShare2 /></Button>
         </Drawer>
     );
 }

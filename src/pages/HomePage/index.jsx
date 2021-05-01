@@ -80,7 +80,7 @@ function HomePage() {
             </Grid>
             <Grid item sm={12} md={6} className={classes.section}>
                 {covidDailyData && <Charts covidData={covidDailyData} mapArray={mapArray} index={index} />}
-                {covidData && <Resources />}
+                {covidData && <Resources mapArray={mapArray} index={index} />}
             </Grid>
         </Grid>
     );
