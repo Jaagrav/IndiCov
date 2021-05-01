@@ -10,5 +10,8 @@ export default function styles(theme) {
             position: 'relative',
             padding: `12px 20px !important`,
         },
+        resourcesSection: {
+            height: "100vh",
+        }
     }
 }

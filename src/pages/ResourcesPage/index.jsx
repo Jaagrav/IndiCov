@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 
 import { Grid, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
@@ -11,12 +11,19 @@ import axios from 'axios';
 import { ResourcesStateSearch, ServicesSearch, ResourceCards } from '../../components';
 
 const useStyles = makeStyles(styles);
+
+
+function useQuery() {
+    return new URLSearchParams(useLocation().search);
+}
+
 function ResourcesPage() {
     const classes = useStyles(),
-        history = useHistory();
+        history = useHistory(),
+        query = useQuery();
 
-    const [stateName, setStateName] = useState("India");
-    const [service, setService] = useState("All");
+    const [stateName, setStateName] = useState(query.get('state'));
+    const [service, setService] = useState(query.get('service'));
     const [resources, setResources] = useState({
         ambulance: null,
         helpline: null,
@@ -28,27 +35,27 @@ function ResourcesPage() {
     useEffect(() => {
         const ambulanceData = {
             method: 'get',
-            url: 'https://life-api.coronasafe.network/data/ambulance.json',
+            url: 'https://life-api.coronasafe.network/data/ambulance_verified.json',
             headers: {}
         };
         const helplineData = {
             method: 'get',
-            url: 'https://life-api.coronasafe.network/data/helpline.json',
+            url: 'https://life-api.coronasafe.network/data/helpline_verified.json',
             headers: {}
         };
         const hospitalsAndBedsData = {
             method: 'get',
-            url: 'https://life-api.coronasafe.network/data/hospital_clinic_centre.json',
+            url: 'https://life-api.coronasafe.network/data/hospital_clinic_centre_verified.json',
             headers: {}
         };
         const medicineData = {
             method: 'get',
-            url: 'https://life-api.coronasafe.network/data/medicine.json',
+            url: 'https://life-api.coronasafe.network/data/medicine_verified.json',
             headers: {}
         };
         const oxygenData = {
             method: 'get',
-            url: 'https://life-api.coronasafe.network/data/oxygen.json',
+            url: 'https://life-api.coronasafe.network/data/oxygen_verified.json',
             headers: {}
         };
 
@@ -60,8 +67,8 @@ function ResourcesPage() {
     }, []);
 
     useEffect(() => {
-        if (stateName === "India" && service === "All")
-            history.replace(`?state=${stateName}&service=${service}`);
+        if (!stateName && !service)
+            history.replace(`?state=India&service=All`);
         else
             history.push(`?state=${stateName}&service=${service}`);
     }, [stateName, service]);
@@ -74,7 +81,7 @@ function ResourcesPage() {
             <Grid item sm={12} md={6} className={classes.section}>
                 <ServicesSearch setService={setService} />
             </Grid>
-            <Grid container className={classes.section} >
+            <Grid container className={`${classes.section} ${classes.resourcesSection}`} >
                 <ResourceCards resources={resources} />
             </Grid>
         </Grid>
