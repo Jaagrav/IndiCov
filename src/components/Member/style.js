@@ -1,23 +1,25 @@
 export default function style(theme) {
     return {
-     
+      container: {
+        width: '100%',
+        padding: "14px 0"
+      },
       infoHolder: {
         display:'flex',
         flexDirection:'column',
         alignItems:'center',
-        padding: "0% 10%",
         background: theme.palette.background.containerColor,
-        marginTop:'4rem',
-        borderRadius:'8px'
+        borderRadius:'8px',
+        padding: 16,
+        margin: '32px 0'
       },
       infoHolder2: {
         display:'flex',
         alignItems:'center',
         width:'100%',
         background: theme.palette.background.containerColor,
-        marginTop:'4rem',
         borderRadius:'8px',
-        padding:'1rem 0rem'
+        padding: 16
       },
       role:{
         color: theme.palette.highlight.blue,
@@ -25,8 +27,6 @@ export default function style(theme) {
       },
       image: {
         width: "180px",
-        // height: '180px',
-        margin:'0rem 4.5rem',
         border: '6.30612px solid' + theme.palette.background.containerColor,
         objectFit:'contain',
         borderRadius:'50%',
@@ -40,7 +40,7 @@ export default function style(theme) {
         borderRadius:'50%',           
       },
       imageWrapper:{
-        width:'80%',
+        marginRight: 14,
         display:'flex',
         justifyContent:'center'
       },
@@ -56,8 +56,7 @@ export default function style(theme) {
         flexDirection:'column',
         alignItems:'center',
         justifyContent:'center',
-        margin:'1rem'
-        
+        margin:'1rem',
       },
       infoBox:{
         width:'100%',

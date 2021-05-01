@@ -1,9 +1,11 @@
 export default function styles(theme) {
     return {
-        homePage: {
+
+        aboutPage: {
             position: 'relative',
             margin: "auto",
             verticalAlign: "middle",
+            padding: "0 16px",
             paddingBottom: 120
         },
         section: {
@@ -21,14 +23,11 @@ export default function styles(theme) {
             textAlign: "center",
             color: theme.palette.highlight.blue,
             fontWeight:'500',
-            padding:'10vh 0vh 5vh 0vh',
             display:'inline-block'
         },
         prevention_title:{
             color: theme.palette.highlight.blue,
             fontWeight:'500',
-            padding:'4vh 0vh 5vh 0vh',
-            margin:'0vw 5vw',
             textAlign:'center'
         },
         title_underline:{
@@ -37,13 +36,16 @@ export default function styles(theme) {
         },
         info:{
             color: theme.palette.text.secondary,
-            margin:'0vw 5vw 65px 5vw',
-            fontSize:'1.2rem'
+            fontSize:'1.2rem',
+            width: '100%',
+            margin: '24px 0',
+            textAlign: 'left',
         },
         about_main:{
             display:'flex',
             flexDirection:'column',
-            alignItems:'center'
+            alignItems:'center',
+            padding: '40px 0'
         },
         brandingName: {
             textAlign: 'center',
@@ -53,5 +55,7 @@ export default function styles(theme) {
             display: "inline-block",
             color: theme.palette.highlight.blue
         },
+        sources_info: {
+        }
     }
 }
