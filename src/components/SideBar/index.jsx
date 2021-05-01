@@ -91,7 +91,7 @@ function SideBar({ value, setValue }) {
                 })}
             </Tabs>
             <Button className={classes.tab}><HiSun /></Button>
-            <Button className={`${classes.tab} ${classes.shareBtn}`} onCLick={share}><FiShare2 /></Button>
+            <Button className={`${classes.tab} ${classes.shareBtn}`} onClick={share}><FiShare2 /></Button>
         </Drawer>
     );
 }
