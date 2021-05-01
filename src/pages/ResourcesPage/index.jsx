@@ -88,10 +88,10 @@ function ResourcesPage() {
                 </Grid>
             </Hidden>
             <Grid item sm={12} md={6} className={classes.section}>
-                <ResourcesStateSearch setStateName={setStateName} />
+                <ResourcesStateSearch setStateName={setStateName} stateName={stateName} />
             </Grid>
             <Grid item sm={12} md={6} className={classes.section}>
-                <ServicesSearch setService={setService} />
+                <ServicesSearch setService={setService} service={service} />
             </Grid>
             <Grid container className={`${classes.section} ${classes.resourcesSection}`} >
                 <ResourceCards resources={resources} />

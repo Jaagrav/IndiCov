@@ -11,7 +11,7 @@ import styles from "./style";
 import paths from "../../pages/HomePage/paths";
 
 const useStyles = makeStyles(styles);
-function ResourcesStateSearch({ setStateName }) {
+function ResourcesStateSearch({ setStateName, stateName }) {
     const classes = useStyles();
     const [states, setStates] = useState([]);
     const {
@@ -32,18 +32,23 @@ function ResourcesStateSearch({ setStateName }) {
         setStates([]);
         for (let i in paths())
             setStates(prevStates => [...prevStates, paths()[i]]);
+
     }, []);
 
     const showResources = (index, e) => {
-        autoCompleteRef.current.children[0].children[0].blur();
+        const event = {
+            target: { value: paths()[index].title }
+        };
+        getInputProps().onChange(event);
         setStateName(paths()[index].title);
+        autoCompleteRef.current.children[0].children[0].blur();
     };
 
     return (
         <Grid container>
             <div className={classes.autoComplete} ref={autoCompleteRef}>
                 <div className={classes.autoCompleteInputBox} {...getRootProps()}>
-                    <input className={classes.autoCompleteInput} placeholder="Search States" {...getInputProps()} />
+                    <input value={stateName} className={classes.autoCompleteInput} placeholder="Search States" {...getInputProps()} />
                     <IconButton color="primary">
                         <RiSearch2Line />
                     </IconButton>
