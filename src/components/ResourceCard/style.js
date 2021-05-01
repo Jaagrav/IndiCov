@@ -46,6 +46,7 @@ export default function styles(theme) {
             backgroundColor: theme.palette.text.secondary
         },
         checkedOn: {
+            textAlign: 'right',
             [theme.breakpoints.down('sm')]: {
                 textAlign: 'left',
             }
